@@ -1,3 +1,8 @@
+/* Donor.java
+Entity for the Donor.
+Author: Bokang Molaoa (218131097) ADP3 Assignment 1.
+Date: 07 April 2022
+*/
 package za.ac.cput.donation.entity;
 
 import javax.persistence.*;
