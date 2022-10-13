@@ -5,6 +5,7 @@ import za.ac.cput.donation.entity.Address;
 import za.ac.cput.donation.entity.Donor;
 import za.ac.cput.donation.entity.Student;
 import za.ac.cput.donation.entity.User;
+import za.ac.cput.donation.service.DonorServiceImpl;
 import za.ac.cput.donation.service.UserServiceImpl;
 
 @RestController
