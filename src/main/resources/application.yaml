@@ -1,0 +1,11 @@
+#server:
+#  error:
+#    include-stacktrace: never
+#spring:
+#  jpa:
+#    ddl-auto: update
+#    show-sql: true
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/donation?createDatabaseIfNotExist=true
+#    username: root
+#    password: password

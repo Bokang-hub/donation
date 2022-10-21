@@ -1,10 +1,4 @@
 package za.ac.cput.donation.controller;
-//
-//* Author:Lukhona Tetyana
-//* Student number: 218119321
-//* ADP3 Capstone Project
-//*
-//
 
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.MethodOrderer;
@@ -17,7 +11,8 @@ import org.springframework.http.*;
 import za.ac.cput.donation.entity.ParcelRequest;
 import za.ac.cput.donation.factory.ParcelRequestFactory;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @TestMethodOrder(MethodOrderer.MethodName.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)

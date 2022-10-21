@@ -7,6 +7,9 @@ import za.ac.cput.donation.entity.Student;
 import za.ac.cput.donation.entity.User;
 import za.ac.cput.donation.service.DonorServiceImpl;
 import za.ac.cput.donation.service.UserServiceImpl;
+import za.ac.cput.donation.service.StudentServiceImpl;
+import za.ac.cput.donation.service.AddressServiceImpl;
+
 
 @RestController
 @RequestMapping("/user")

@@ -11,20 +11,24 @@ import org.springframework.http.*;
 import za.ac.cput.donation.entity.Record;
 import za.ac.cput.donation.factory.RecordFactory;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @TestMethodOrder(MethodOrderer.MethodName.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class RecordControllerTest {
     @Autowired
     private TestRestTemplate restTemplate;
-    private final String BASE_URL = "http://localhost:8080/record";
+    private final String BASE_URL = "http://localhost:8080/auth/record";
     private static Record record = RecordFactory.createRecord(15, "11/11/2021", "Some type", true);
 
     @Test
     void a_save() {
         String url = BASE_URL + "/save";
-        ResponseEntity<Record> postResponse = restTemplate.postForEntity(url, record, Record.class);
+        HttpHeaders headers = new HttpHeaders();
+        headers.setBasicAuth("azzo","athi");
+        HttpEntity<Record> entity = new HttpEntity<>(record, headers);
+        ResponseEntity<Record> postResponse = restTemplate.postForEntity(url, entity, Record.class);
         assertNotNull(postResponse);
         assertNotNull(postResponse.getBody());
         assertEquals(HttpStatus.OK, postResponse.getStatusCode());
@@ -34,10 +38,14 @@ class RecordControllerTest {
     }
 
     @Test
+    @Disabled("No longer exist")
     void b_find() {
         String url = BASE_URL + "/find/" + record.getId();
         System.out.println("URL: " + url);
-        ResponseEntity<Record> response = restTemplate.getForEntity(url, Record.class);
+        HttpHeaders headers = new HttpHeaders();
+        headers.setBasicAuth("azzo","athi");
+        HttpEntity<Record> entity = new HttpEntity<>(null, headers);
+        ResponseEntity<Record> response = restTemplate.exchange(url, HttpMethod.GET, entity, Record.class);
         assertNotNull(response);
         assertNotNull(response.getBody());
         System.out.println("Read: " + response.getBody());
@@ -46,8 +54,9 @@ class RecordControllerTest {
     @Test
     void c_findAll() {
         String url = BASE_URL + "/find/all";
-        HttpHeaders header = new HttpHeaders();
-        HttpEntity<String> entity = new HttpEntity<>(null, header);
+        HttpHeaders headers = new HttpHeaders();
+        headers.setBasicAuth("azzo","athi");
+        HttpEntity<Record> entity = new HttpEntity<>(null, headers);
         ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.GET, entity, String.class);
         assertNotNull(response);
         assertNotNull(response.getBody());

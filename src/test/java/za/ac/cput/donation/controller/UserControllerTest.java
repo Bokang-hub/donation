@@ -13,7 +13,7 @@ import org.springframework.http.ResponseEntity;
 import za.ac.cput.donation.entity.Donor;
 import za.ac.cput.donation.entity.Student;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @TestMethodOrder(MethodOrderer.MethodName.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
