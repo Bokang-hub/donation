@@ -1,2 +1,7 @@
-# donation
-Fixed version of the project that was submitted first term.
+#School Management
+
+#UML part
+
+![](UML/Donation.jpeg)
+
+#Group 6 will be implementing this project 

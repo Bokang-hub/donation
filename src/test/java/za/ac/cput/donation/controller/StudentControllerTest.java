@@ -1,3 +1,6 @@
+/*
+Author: Xola Mngeni (218268017) ADP3 Assignment 1.
+Date: 07 April 2022*/
 package za.ac.cput.donation.controller;
 
 import org.junit.jupiter.api.Disabled;
@@ -22,7 +25,7 @@ class StudentControllerTest {
     private TestRestTemplate restTemplate;
     private final String BASE_URL = "http://localhost:8080/auth/student";
 
-    private static Student student = StudentFactory.createStudent("Athi", "Zono", "a@t.com", true, "innoo");
+    private static Student student = StudentFactory.createStudent("Xola", "Mngeni", "a@t.com", true, "innoo");
 
     @Test
     @Disabled("not under auth route anymore")
